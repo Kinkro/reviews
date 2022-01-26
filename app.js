@@ -57,7 +57,45 @@ let currentItem = 0;
 // load initial item
 
 window.addEventListener("DOMContentLoaded", function(){
-    const item = reviews[currentItem];
+    showPerson(currentItem);
+    
+})
+// show person based on item
+function showPerson(person){
+    const item = reviews[person];
     img.src = item.img;
+    author.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+}
 
+//Listening to the prevBtn
+
+prevBtn.addEventListener("click",function(){
+    if(currentItem===0){
+        currentItem=4;
+    }else if(currentItem>0){
+        currentItem--;
+    }
+    
+    showPerson(currentItem);
+
+});
+
+
+//Listening to the nextBtn
+nextBtn.addEventListener("click", function(){
+    if(currentItem===4){
+        currentItem=0;
+    }else if(currentItem<4){
+        currentItem++;
+    }
+    
+    showPerson(currentItem);
+});
+ 
+
+randomBtn.addEventListener("click",function(){
+    randomNumber = Math.floor(Math.random() * reviews.length);
+    showPerson(randomNumber);
 })
