@@ -73,7 +73,7 @@ function showPerson(person){
 
 prevBtn.addEventListener("click",function(){
     if(currentItem===0){
-        currentItem=4;
+        currentItem=3;
     }else if(currentItem>0){
         currentItem--;
     }
@@ -85,9 +85,9 @@ prevBtn.addEventListener("click",function(){
 
 //Listening to the nextBtn
 nextBtn.addEventListener("click", function(){
-    if(currentItem===4){
+    if(currentItem===3){
         currentItem=0;
-    }else if(currentItem<4){
+    }else if(currentItem<3){
         currentItem++;
     }
     
